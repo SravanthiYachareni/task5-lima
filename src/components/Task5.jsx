@@ -7,6 +7,7 @@ function Task5() {
     const [editId, setEditId] = useState(null)
     const [addExperience, setExperiecne] = useState([])
     const [selected, setSelected] = useState(false)
+    const [isVisisble, setIsvisisble] = useState(false)
     const [employee, setEmployee] = useState({
         id: Date.now(),
         empId: '',
@@ -46,7 +47,7 @@ function Task5() {
     }
     const addEmp = () => {
         const updateExpeience = [...addExperience,
-        { company: '', experience: '', startDate: '', endDate: '' }]
+        { company: '', experience: '', role1: '', startDate: '', endDate: '', notice: '' }]
         setExperiecne(updateExpeience)
     }
     const handleExperienceChange = (index, e) => {
@@ -69,27 +70,60 @@ function Task5() {
                         <form onSubmit={handleSubmit} >
                             <div className='container1'>
                                 <div className='form'>
-                                    <div>
-                                        <input type='text' placeholder='Id' name='empId'
-                                            value={employee.empId} onChange={handleChange} />
-                                        <input type='text' placeholder='First Name' name='firstname'
-                                            value={employee.firstname} onChange={handleChange} />
-                                        <input type='text' placeholder='Last Name' name='lastname'
-                                            value={employee.lastname} onChange={handleChange} />
+                                    <div className='title'> <h5 >Employee details</h5>
+                                        <span className='expand' onClick={() => setIsvisisble(!isVisisble)}>{isVisisble ? '-collapse' : '+expand'}</span>
                                     </div>
-                                    <div>
-                                        <input type='text' placeholder='Email' name='email' value={employee.email}
-                                            onChange={handleChange} />
-                                        {/* <input type='text' placeholder='gender' name='gender' value={employee.gender}
-                                            onChange={handleChange} /> */}
-                                        <select name='gender' onChange={handleChange}>
-                                            <option value='male'> Male</option>
-                                            <option value='female'>Female</option>
-                                            <option value='others'>Others</option>
-                                        </select>
-                                        <input type='text' placeholder='Role' name='role' value={employee.role}
-                                            onChange={handleChange} />
-                                    </div>
+                                    {
+                                        isVisisble &&
+                                        <div>
+                                            <div >
+                                                <div className='input-row'>
+
+                                                    <div className='form-group1'>
+                                                        <label>Id</label>
+                                                        <input type='text' placeholder='Id' name='empId'
+                                                            value={employee.empId} onChange={handleChange} />
+                                                    </div>
+
+                                                    <div className='form-group2'>
+                                                        <label>First Name</label>
+                                                        <input type='text' placeholder='First Name' name='firstname'
+                                                            value={employee.firstname} onChange={handleChange} />
+                                                    </div>
+
+                                                    <div className='form-group3'>
+                                                        <label>Last Name</label>
+                                                        <input type='text' placeholder='Last Name' name='lastname'
+                                                            value={employee.lastname} onChange={handleChange} />
+                                                    </div>
+
+                                                </div>
+
+                                                <div className='input-row'>
+                                                    <div className='form-group4'>
+                                                        <label>Email</label>
+                                                        <input type='text' placeholder='Email' name='email' value={employee.email}
+                                                            onChange={handleChange} />
+                                                    </div>
+
+                                                    <div className='form-group5'>
+                                                        <label>Gender</label>
+                                                        <select name='gender' onChange={handleChange}>
+                                                            <option value='male'> Male</option>
+                                                            <option value='female'>Female</option>
+                                                            <option value='others'>Others</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div className='form-group6'>
+                                                        <label>Role</label>
+                                                        <input type='text' placeholder='Role' name='role' value={employee.role}
+                                                            onChange={handleChange} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
 
                                 </div>
                             </div>
@@ -97,7 +131,7 @@ function Task5() {
                             <div>
                                 <div className='emp-experience'>
                                     <div className='container'>
-                                        <div className='title1'><h5>Add Experience</h5>
+                                        <div className='title1'><h5>Add Experience  <span className='btn' onClick={addEmp}><h3>+</h3></span></h5>
                                             <span className='expand'
                                                 onClick={() => setSelected(!selected)}>
                                                 {selected ? '-collapse' : '+expand'}</span>
@@ -110,21 +144,25 @@ function Task5() {
                                                 {
                                                     addExperience.map((add, i) => {
                                                         return (
-                                                            <div className='experience'>
-                                                                <div className='company'>
-                                                                    <input type='text' placeholder='Company' name='company'
-                                                                        value={add.company} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                            <div className='container-box'>
+                                                                <div className='experience'>
+                                                                    <div className='company'>
+                                                                        <input type='text' placeholder='Company' name='company'
+                                                                            value={add.company} onChange={(e) => { handleExperienceChange(i, e) }} />
 
-                                                                    <input type='text' placeholder='Experience' name='experience'
-                                                                        value={add.experience} onChange={(e) => { handleExperienceChange(i, e) }} />
-                                                                </div>
-                                                                <div className='date'>
-                                                                    <div> Start date<input type='date' name='startDate'
-                                                                        value={add.startDate} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                                        <input type='text' placeholder='Experience' name='experience'
+                                                                            value={add.experience} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                                        <input type='text' placeholder='Role' name='role1'
+                                                                            value={add.role1} onChange={(e) => { handleExperienceChange(i, e) }} />
                                                                     </div>
-                                                                    <div style={{ paddingRight: '600px' }}>
-                                                                        End date <input type='date' name='endDate'
-                                                                            value={add.endDate} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                                    <div className='date'>
+                                                                        <div> Start Date<input type='date' name='startDate'
+                                                                            value={add.startDate} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                                        </div>
+                                                                        <div style={{ paddingRight: '600px' }}>
+                                                                            End Date <input type='date' name='endDate'
+                                                                                value={add.endDate} onChange={(e) => { handleExperienceChange(i, e) }} />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -132,7 +170,7 @@ function Task5() {
                                                         )
                                                     })
                                                 }
-                                                <button className='btn' onClick={addEmp}>+add</button>
+
                                             </div>
 
                                         }
