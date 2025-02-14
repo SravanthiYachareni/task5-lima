@@ -220,7 +220,7 @@ tr:hover {
 
 }
 
-.experience input {
+/* .experience input {
     border: 1px solid #ddd;
     box-sizing: border-box;
     padding: 8px 20px;
@@ -228,7 +228,7 @@ tr:hover {
     width: 200px;
 
 
-}
+} */
 
 .experience {
     display: flex;
@@ -240,18 +240,17 @@ tr:hover {
     gap: 10px;
 }
 
-.experience input {
+/* .experience input {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 200px;
     border-radius: 9px;
     opacity: 1;
-    /* top: 263px; */
-/* left: 260px; */
+ 
 width: 200px;
 height: 40px;
-}
+} */
 
 .form>div {
     display: flex;
@@ -406,9 +405,7 @@ label {
 .form-group2>label {
     position: absolute;
     top: 134px;
-
-    left: 528px;
-    ;
+     left: 528px;   
 }
 
 
@@ -443,4 +440,8 @@ margin: 4px;
 padding-left: 10px;
 border-radius: 6px;
 
+}
+#delete-btn {
+    position: relative;
+    left: 720px;
 }

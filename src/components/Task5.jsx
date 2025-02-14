@@ -40,7 +40,7 @@ function Task5() {
                 lastname: "",
                 email: "",
                 gender: "",
-                select: ""
+                role: ""
             }
         )
 
@@ -80,19 +80,19 @@ function Task5() {
                                                 <div className='input-row'>
 
                                                     <div className='form-group1'>
-                                                        <label>Id</label>
+                                                        {/* <label>Id</label> */}
                                                         <input type='text' placeholder='Id' name='empId'
                                                             value={employee.empId} onChange={handleChange} />
                                                     </div>
 
                                                     <div className='form-group2'>
-                                                        <label>First Name</label>
+                                                        {/* <label>First Name</label> */}
                                                         <input type='text' placeholder='First Name' name='firstname'
                                                             value={employee.firstname} onChange={handleChange} />
                                                     </div>
 
                                                     <div className='form-group3'>
-                                                        <label>Last Name</label>
+                                                        {/* <label>Last Name</label> */}
                                                         <input type='text' placeholder='Last Name' name='lastname'
                                                             value={employee.lastname} onChange={handleChange} />
                                                     </div>
@@ -101,22 +101,22 @@ function Task5() {
 
                                                 <div className='input-row'>
                                                     <div className='form-group4'>
-                                                        <label>Email</label>
+                                                        {/* <label>Email</label> */}
                                                         <input type='text' placeholder='Email' name='email' value={employee.email}
                                                             onChange={handleChange} />
                                                     </div>
 
                                                     <div className='form-group5'>
-                                                        <label>Gender</label>
+                                                        {/* <label>Gender</label> */}
                                                         <select name='gender' onChange={handleChange}>
-                                                            <option value='male'> Male</option>
-                                                            <option value='female'>Female</option>
-                                                            <option value='others'>Others</option>
+                                                            <option > Male</option>
+                                                            <option >Female</option>
+                                                            <option >Others</option>
                                                         </select>
                                                     </div>
 
                                                     <div className='form-group6'>
-                                                        <label>Role</label>
+                                                        {/* <label>Role</label> */}
                                                         <input type='text' placeholder='Role' name='role' value={employee.role}
                                                             onChange={handleChange} />
                                                     </div>
@@ -145,8 +145,11 @@ function Task5() {
                                                     addExperience.map((add, i) => {
                                                         return (
                                                             <div className='container-box'>
+                                                                 <button id='delete-btn'>Delete</button>
                                                                 <div className='experience'>
+                                                               
                                                                     <div className='company'>
+                                                                        
                                                                         <input type='text' placeholder='Company' name='company'
                                                                             value={add.company} onChange={(e) => { handleExperienceChange(i, e) }} />
 
