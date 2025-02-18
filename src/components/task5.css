@@ -220,7 +220,7 @@ tr:hover {
 
 }
 
-/* .experience input {
+.experience input {
     border: 1px solid #ddd;
     box-sizing: border-box;
     padding: 8px 20px;
@@ -228,7 +228,7 @@ tr:hover {
     width: 200px;
 
 
-} */
+}
 
 .experience {
     display: flex;
@@ -240,17 +240,18 @@ tr:hover {
     gap: 10px;
 }
 
-/* .experience input {
+.experience input {
     display: flex;
     flex-direction: column;
     gap: 10px;
     width: 200px;
     border-radius: 9px;
     opacity: 1;
- 
+    /* top: 263px; */
+/* left: 260px; */
 width: 200px;
 height: 40px;
-} */
+}
 
 .form>div {
     display: flex;
@@ -404,8 +405,8 @@ label {
 
 .form-group2>label {
     position: absolute;
-    top: 134px;
-     left: 528px;   
+    top: 134px; left: 528px;
+    
 }
 
 
@@ -432,7 +433,7 @@ label {
 
 }
 .container-box {
-background-color: #F3F3F3;
+/* background-color: #F3F3F3; */
 padding-bottom: 10px;
 border: 2px solid #ccc;
 padding-top: 10px;
@@ -444,4 +445,12 @@ border-radius: 6px;
 #delete-btn {
     position: relative;
     left: 720px;
+}
+.search {
+    padding-left: 10px;
+    margin-left: 190px;
+    margin-bottom: 10px;
+}
+.search input {
+    opacity: 0.5;
 }
