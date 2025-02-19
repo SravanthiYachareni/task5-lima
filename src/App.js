@@ -4,15 +4,17 @@ import Task5 from './components/Task5';
 import Json from './components/Json';
 import FetchData from './components/FetchData';
 import Pagination from './components/Pagination';
+import Sorting from './components/Sorting';
 
 function App() {
   return (
     <div className="App">
      
       {/* <Task5></Task5> */}
-      <Json></Json>
+      {/* <Json></Json>
       <FetchData></FetchData>
-      <Pagination></Pagination>
+      <Pagination></Pagination> */}
+      <Sorting></Sorting>
     </div>
   );
 }
