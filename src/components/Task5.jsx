@@ -77,6 +77,8 @@ function Task5() {
         })
         setList(userCopy)
     }
+    // const  Asen = [list].sort((a,b)=>a.empId - b.empId)
+    // console.log
 
     const sortByName = () => {
         setSorted({sorted:'firstname',reversed: !sorted.reversed})
@@ -278,7 +280,9 @@ function Task5() {
                     </div>
                     <table id='emp-table'>
                         <tr>
-                            <th >Emp Id<span onClick={sortById} style={{paddingLeft:'6px',paddingTop:'4px',opacity:'0.6'}}><FaSort /></span></th>
+                            <th >Emp Id<span onClick={sortById}
+                             style={{paddingLeft:'6px',paddingTop:'4px',opacity:'0.6'}}>
+                                <FaSort /></span></th>
                             <th >First Name<span onClick={sortByName} style={{paddingLeft:'6px',paddingTop:'4px',opacity:'0.6'}}><FaSort /></span></th>
                             <th >Last Name <span onClick={sortByName1} style={{paddingLeft:'6px',paddingTop:'4px',opacity: '0.6'}}><FaSort/></span></th>
                             <th>Email</th>
